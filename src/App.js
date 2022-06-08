@@ -2,6 +2,8 @@ import './css/App.css';
 import Navbar from './components/navbar';
 import React, {useState} from 'react';
 import { Routes, Route} from 'react-router-dom'
+import Home from './views/Home';
+import Shop from './views/Shop';
 function App() {
 
   const [count, setCount] = useState(0);
@@ -22,8 +24,8 @@ function App() {
         </div>
       </div>
       <Routes>
-        <Route children path='/'/>
-        <Route children path='/shop'/>
+        <Route children path='/' element = {<Home />} />
+        <Route children path='/shop' element={<Shop />} />
         <Route children path=''/>
       </Routes>
   </React.Fragment>);
