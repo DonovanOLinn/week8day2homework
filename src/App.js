@@ -1,7 +1,7 @@
 import './css/App.css';
 import Navbar from './components/navbar';
 import React, {useState} from 'react';
-
+import { Routes, Route} from 'react-router-dom'
 function App() {
 
   const [count, setCount] = useState(0);
@@ -13,12 +13,20 @@ function App() {
 
 
   return (
-    <div className="App">
+    <React.Fragment>
       <Navbar />
-      <h1 className='counter'>{count}</h1>
-      <button onClick={changeCounter}> change count</button>
-    </div>
-  );
+      <div className="App">
+        <div className='row'>
+          <h1 className='counter'>{count}</h1>
+          <button className='brn brn-sm btn-info' onClick={changeCounter}> change count</button>
+        </div>
+      </div>
+      <Routes>
+        <Route children path='/'/>
+        <Route children path='/shop'/>
+        <Route children path=''/>
+      </Routes>
+  </React.Fragment>);
 }
 
 export default App;
